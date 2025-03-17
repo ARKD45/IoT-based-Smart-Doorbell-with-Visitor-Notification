@@ -1,47 +1,57 @@
-# IoT-based-Smart-Doorbell-with-Visitor-Notification
+# Smart Doorbell with Visitor Notification Using ESP32  
 
-This project is a Smart Doorbell System designed using an ESP32, featuring a PIR sensor, push button, and IoT integration via Blynk to send real-time visitor notifications.
+## Overview  
 
-Features
-Push Button Doorbell: Pressing the button rings a buzzer and sends a notification to the user's phone.
-Motion Detection: Detects movement near the door and alerts the user.
-Blynk Integration: Uses the Blynk app to send instant alerts when the doorbell is pressed or motion is detected.
-LED Indicators:
-Red LED turns on for motion detection.
-Green LED turns on when the push button is pressed.
-Buzzer Alert: Produces a “Someone is calling you” tone for added awareness.
-Components Required
-ESP32
-PIR Sensor (for motion detection)
-Push Button (for manual doorbell trigger)
-Buzzer (for sound alert)
-Red and Green LEDs (for visual status)
-Blynk App (for mobile notifications)
-How It Works
-Push Button Alert: When the push button is pressed, the system:
+The Smart Doorbell with Visitor Notification is an ESP32-based project designed to alert users about visitors through a push button and motion detection system. It sends real-time notifications via the Blynk app and uses LEDs and a buzzer for additional alerts.  
 
-Activates the buzzer.
-Turns on the green LED.
-Sends a "Doorbell Pressed!" notification to the Blynk app.
-Motion Detection Alert: When motion is detected by the PIR sensor:
+## Features  
 
-The red LED turns on.
-A "Motion Detected!" notification is sent to the Blynk app.
-The system resets the LED status when no motion or button press is detected.
+- Push Button Doorbell: Alerts residents with a buzzer sound and sends a notification when pressed.  
+- Motion Detection: Detects movement near the door and triggers a notification.  
+- Blynk Integration: Uses the Blynk app to send instant alerts for both doorbell presses and motion detection.  
+- LED Indicators:  
+  - Red LED indicates motion detection.  
+  - Green LED indicates the push button has been pressed.  
+- Buzzer Alert: Produces a distinct two-tone sound to notify residents.  
 
-Setup Instructions
-Install the Blynk app and create a new template.
-Copy your Template ID, Template Name, and Auth Token into the code.
-Connect the ESP32 to Wi-Fi by entering your SSID and Password in the code.
-Wire the components as follows:
-PIR Sensor → D34
-Push Button → D14
-Buzzer → D27
-Red LED → D13
-Green LED → D26
-Upload the code to your ESP32 using Arduino IDE.
-Open the Blynk app to monitor alerts in real-time.
-Code Highlights
-The code ensures noise-free signals using a debounce delay for accurate motion and button detection.
-The callingTone() function generates a distinct two-tone buzzer alert.
-Efficient power management is implemented to reduce energy consumption.
+## File Structure  
+
+- Code: Contains the Arduino IDE code for ESP32.  
+- Circuit_Diagram: Provides wiring details and connection schematics.  
+- Mobile_App: Offers guidance on setting up the Blynk app.  
+
+## How It Works  
+
+1. Loading the System  
+   - The ESP32 connects to Wi-Fi and initializes the Blynk platform.  
+   - The system sets all components to an inactive state by default.  
+
+2. Push Button Operation  
+   - When the push button is pressed, the system:  
+     - Activates the buzzer.  
+     - Turns on the green LED.  
+     - Sends a notification labeled "Doorbell Pressed!" through the Blynk app.  
+
+3. Motion Detection Operation  
+   - When the PIR sensor detects movement:  
+     - The red LED turns on.  
+     - A notification labeled "Motion Detected!" is sent through the Blynk app.  
+
+4. Resetting the System  
+   - The system resets LED indicators when no motion or button press is detected.  
+
+## Usage  
+
+1. Install the Blynk app and create a new template.  
+2. Copy your Template ID, Template Name, and Auth Token into the code.  
+3. Connect the ESP32 to Wi-Fi by updating the SSID and Password in the code.  
+4. Wire the components as follows:  
+   - PIR Sensor to D34  
+   - Push Button to D14  
+   - Buzzer to D27  
+   - Red LED to D13  
+   - Green LED to D26  
+5. Upload the code to the ESP32 using Arduino IDE.  
+6. Open the Blynk app to receive real-time alerts.  
+
+Thank you:)
